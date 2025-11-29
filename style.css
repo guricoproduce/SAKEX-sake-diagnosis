@@ -1,0 +1,338 @@
+:root {
+    --color-bg: #050505;
+    /* Almost Black */
+    --color-bg-light: #111111;
+    /* Dark Gray for cards */
+    --color-accent: #d4af37;
+    /* Metallic Gold */
+    --color-accent-hover: #f1d06e;
+    --color-text: #ffffff;
+    --color-text-muted: #b0b0b0;
+    --font-serif: 'Shippori Mincho', 'Zen Old Mincho', serif;
+    --font-sans: 'Helvetica Neue', Arial, sans-serif;
+    --transition-speed: 0.4s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-serif);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background Texture/Overlay */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 0.4) 0%, rgba(0, 0, 0, 0.95) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header */
+.site-header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    font-family: var(--font-sans);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn var(--transition-speed) ease-out;
+}
+
+/* Typography */
+h1.main-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: linear-gradient(to right, #c5a059, #f2f2f2, #c5a059);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: shine 5s linear infinite;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--color-text-muted);
+}
+
+.question-text {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+}
+
+.btn-option {
+    background-color: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    margin: 0 1rem;
+    min-width: 150px;
+}
+
+.btn-option:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-text-muted);
+    color: var(--color-text-muted);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    padding: 0.8rem 2rem;
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.btn-text:hover {
+    color: var(--color-accent);
+}
+
+/* Screens */
+.screen {
+    display: none;
+    width: 100%;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-accent);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Result Card - Label Style */
+.result-card {
+    background-color: #fff;
+    /* White paper background for label look */
+    color: #111;
+    /* Dark text for contrast on label */
+    border: 4px double var(--color-accent);
+    /* Double border like a label */
+    padding: 3rem;
+    border-radius: 2px;
+    /* Sharp corners */
+    margin-top: 2rem;
+    position: relative;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    max-width: 500px;
+    /* Limit width to look like a bottle label */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Japanese Paper Texture Effect */
+.result-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.result-heading {
+    color: var(--color-accent);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #111;
+    /* Keep it dark on white label */
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.result-name {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    writing-mode: vertical-rl;
+    /* Vertical text for traditional feel */
+    text-orientation: upright;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    /* Fixed height for vertical text */
+    letter-spacing: 0.3em;
+    font-family: 'Zen Old Mincho', serif;
+}
+
+.result-desc {
+    margin-bottom: 2rem;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.result-image-placeholder {
+    display: none;
+    /* Hide placeholder, focus on typography as label */
+}
+
+/* Tags on Label */
+.tags span {
+    border: 1px solid #111;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.8rem;
+    color: #111 !important;
+    /* Override inline style */
+}
+
+/* Buttons inside Result (need to pop out of the label) */
+.result-info .btn-primary {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.result-info .btn-secondary {
+    border-color: #888;
+    color: #666;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1.main-title {
+        font-size: 2rem;
+    }
+
+    .question-text {
+        font-size: 1.5rem;
+    }
+
+    .btn-option {
+        display: block;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+    }
+}
