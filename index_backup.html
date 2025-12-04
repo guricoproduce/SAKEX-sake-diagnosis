@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKEX - あなたにぴったりの日本酒を</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Old+Mincho:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+
+    <header class="site-header">
+        <div class="logo">SAKEX</div>
+        <p class="tagline">日本酒に変革を - Revolution in Sake</p>
+    </header>
+
+    <main>
+        <section id="intro" class="screen active">
+            <div class="content-wrapper">
+                <h1 class="main-title">運命の一本に出会う旅</h1>
+                <p class="description">いくつかの質問に答えるだけで、<br>今のあなたに最適な日本酒をご提案します。</p>
+                <button id="start-btn" class="btn btn-primary">診断を始める</button>
+            </div>
+        </section>
+
+        <section id="question-container" class="screen hidden">
+            <div class="content-wrapper">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <h2 id="question-text" class="question-text">質問テキスト</h2>
+                <div class="options">
+                    <button class="btn btn-option" data-answer="yes">はい</button>
+                    <button class="btn btn-option" data-answer="no">いいえ</button>
+                </div>
+                <button id="back-btn" class="btn btn-text">戻る</button>
+            </div>
+        </section>
+
+        <section id="result-container" class="screen hidden">
+            <div class="content-wrapper">
+                <h2 class="result-heading">あなたにおすすめの日本酒は...</h2>
+                <div class="result-card">
+                    <div class="result-image-placeholder" id="result-image">
+                        <!-- Image will be inserted here -->
+                    </div>
+                    <div class="result-info">
+                        <h3 id="result-name" class="result-name">日本酒名</h3>
+                        <p id="result-desc" class="result-desc">説明文がここに入ります。</p>
+                        <div class="tags" id="result-tags">
+                            <!-- Tags like "Sweet", "Fruity" -->
+                        </div>
+                        <a href="#" id="result-link" class="btn btn-primary" target="_blank">詳細を見る・購入する</a>
+                        <button id="restart-btn" class="btn btn-secondary">もう一度診断する</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SAKEX. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
