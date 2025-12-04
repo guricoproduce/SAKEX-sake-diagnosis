@@ -8,9 +8,7 @@
     <style>
         body {
             background-color: #000000;
-            /* ブラック */
             color: #d4af37;
-            /* ゴールド */
             font-family: "Yu Mincho", "YuMincho", serif;
             display: flex;
             justify-content: center;
@@ -48,11 +46,9 @@
         .question,
         .result {
             display: none;
-            /* 初期状態は非表示 */
             animation: fadeIn 0.6s ease;
         }
 
-        /* 最初に表示するクラス */
         .active {
             display: block;
         }
@@ -92,25 +88,34 @@
         }
 
         .product-name {
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: bold;
             margin-bottom: 8px;
             display: block;
             color: #fff;
-            /* 商品名は白で強調 */
-            min-height: 3em;
-            /* 高さ揃え */
+            min-height: 2.5em;
+        }
+
+        .sold-out-badge {
+            display: inline-block;
+            background-color: #999;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            margin-left: 8px;
+            font-weight: normal;
         }
 
         .product-desc {
-            font-size: 0.9em;
+            font-size: 0.85em;
             margin-bottom: 15px;
             flex-grow: 1;
+            line-height: 1.6;
         }
 
         .tags {
             margin-top: auto;
-            /* 下部に寄せる */
             margin-bottom: 15px;
         }
 
@@ -145,6 +150,13 @@
             transform: translateY(-2px);
         }
 
+        .btn-buy.sold-out {
+            background-color: #666;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -163,11 +175,9 @@
             gap: 25px;
             margin-top: 30px;
             margin-bottom: 50px;
-            /* ボタンとの重なり防止 */
             width: 100%;
         }
 
-        /* スマホ対応 */
         @media (max-width: 600px) {
             .container {
                 padding: 30px 15px;
@@ -189,13 +199,11 @@
 
             .results-row {
                 grid-template-columns: 1fr;
-                /* スマホでは1列 */
                 gap: 30px;
             }
 
             .result-box {
                 min-height: auto;
-                /* 高さは内容なりに */
             }
 
             .product-name {
@@ -260,14 +268,12 @@
                     style="font-size:0.7em">香り・華やか</span></button>
         </div>
 
-        <!-- 結果画面 -->
-
         <div id="result_tenkawa" class="result">
             <p>あなたにおすすめの日本酒は...</p>
             <div class="results-row">
                 <div class="result-box">
-                    <span class="product-name">天河 大吟醸</span>
-                    <div class="product-desc">香り高く、見た目も美しい王道の豪華さ。</div>
+                    <span class="product-name">天河 大吟醸 (720ml)</span>
+                    <div class="product-desc">自然音楽響く酒蔵が醸すお酒。天河大辨財天社とのご縁のあるお酒。じっくりと低温で醸したキレある上品な香りで洗練の味わいの大吟醸です。</div>
                     <div class="tags"><span class="tag">特別</span><span class="tag">香り</span><span
                             class="tag">レア</span><span class="tag">食事</span><span class="tag">初心者</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
@@ -280,8 +286,9 @@
             <p>あなたにおすすめの日本酒は...</p>
             <div class="results-row">
                 <div class="result-box">
-                    <span class="product-name">六歓 夢想う 長期熟成純米大吟醸</span>
-                    <div class="product-desc">3年以上の長期熟成。最高級の特別感を。</div>
+                    <span class="product-name">六歓 夢想う 長期熟成純米大吟醸(720ml)</span>
+                    <div class="product-desc">7年火入せず低温で熟成した純米大吟醸生原酒を数量限定で蔵出しした特別なお酒。まろやかな口当たりながらおだやかな香りも残した至極の一本です。
+                    </div>
                     <div class="tags"><span class="tag">レア</span><span class="tag">限定酒</span><span class="tag">特別</span>
                     </div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
@@ -294,8 +301,8 @@
             <p>あなたにおすすめの日本酒は...</p>
             <div class="results-row">
                 <div class="result-box">
-                    <span class="product-name">六歓 季（とき）のあつめばこ ふゆ</span>
-                    <div class="product-desc">冬限定の特別デザイン（雪景色）。ギフトにも。</div>
+                    <span class="product-name">【東和酒造】六歓 季（とき）のあつめばこ ふゆ (720ml)</span>
+                    <div class="product-desc">贅沢に5種類の原酒（純米大吟醸と純米吟醸）を使用した杜氏のお気に入りをあつめた純米吟醸原酒。二年ぶりに登場！</div>
                     <div class="tags"><span class="tag">特別</span><span class="tag">香り</span><span
                             class="tag">レア</span><span class="tag">季節限定</span><span class="tag">限定酒</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
@@ -308,22 +315,22 @@
             <p>あなたにおすすめの日本酒は...</p>
             <div class="results-row">
                 <div class="result-box">
-                    <span class="product-name">三冠 雄町</span>
-                    <div class="product-desc">キレのあるTHE辛口。旨味を楽しみたい方に。</div>
+                    <span class="product-name">三冠 雄町純米 吟醸 一回火入</span>
+                    <div class="product-desc">「オマチスト」にはたまらない！口に含んだのち、後半余韻に感じるほのかな香りと味わいの調和とコントラストをお楽しみください。</div>
                     <div class="tags"><span class="tag">食事</span><span class="tag">熱燗</span><span class="tag">通</span>
                     </div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">御前酒 如意山</span>
-                    <div class="product-desc">キレのあるTHE辛口。旨味を楽しみたい方に。</div>
+                    <span class="product-name">御前酒 純米吟醸 如意山</span>
+                    <div class="product-desc">「オマチスト」必見！温度帯を変えての味わいの変化を楽しんで。</div>
                     <div class="tags"><span class="tag">食事</span><span class="tag">熱燗</span><span class="tag">通</span>
                     </div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">白鷺の城 喜縁</span>
-                    <div class="product-desc">熟成感のある深い味わい。</div>
+                    <span class="product-name">純米吟醸 白鷺の城 喜縁 720ml</span>
+                    <div class="product-desc">復活の酒米、兵庫の野条穂を使用したお酒。まさに食中酒、食事に合わせると寄り添ってくれる味わい。</div>
                     <div class="tags"><span class="tag">食事</span><span class="tag">熱燗</span><span class="tag">通</span>
                     </div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
@@ -336,37 +343,39 @@
             <p>あなたにおすすめの日本酒は...</p>
             <div class="results-row">
                 <div class="result-box">
-                    <span class="product-name">金陵 うどんに合う酒</span>
-                    <div class="product-desc">出汁（うどん・おでん）との相性抜群。</div>
+                    <span class="product-name">金陵 うどんに合う酒 純米 (720ml)</span>
+                    <div class="product-desc">讃岐うどんの地、ならでは！うどんやおでんなどのお出汁が美味しいお料理に合わせたい食中酒。</div>
                     <div class="tags"><span class="tag">熱燗</span><span class="tag">食事</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">六歓 つきねこ</span>
-                    <div class="product-desc">ぬる燗で美味しい優しい味。可愛いラベル。</div>
+                    <span class="product-name">六歓 つきねこ 純米酒 (720ml)</span>
+                    <div class="product-desc">つきねこのテーマはお燗。50度ぐらいに温めますと香りが広がりキレがよくなるお酒です。</div>
                     <div class="tags"><span class="tag">熱燗</span><span class="tag">香り</span><span class="tag">食事</span>
                     </div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">山丹正宗 MINAMOTO</span>
-                    <div class="product-desc">バランスの良い受賞酒。食中酒の万能選手。</div>
+                    <span class="product-name">山丹正宗 MINAMOTO (720ml)</span>
+                    <div class="product-desc">全国燗酒コンテスト 2025 プレミアムぬる燗部門
+                        金賞。繊細な味付けの和食はもちろん、しっかりと脂の乗った肉料理にもよく合います。冷やしても温めてもOK！</div>
                     <div class="tags"><span class="tag">受賞酒</span><span class="tag">熱燗</span><span class="tag">食事</span>
                     </div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">生酛純米吟醸 白鷺の城</span>
-                    <div class="product-desc">伝統的な生酛造り。奥深い味わい。</div>
+                    <span class="product-name">生酛純米吟醸 白鷺の城 (720ml)</span>
+                    <div class="product-desc">きれいな味わいの広がり、かつ切れ味を楽しむことができるフランスのKura master 2025プラチナ賞受賞酒！</div>
                     <div class="tags"><span class="tag">受賞酒</span><span class="tag">香り</span><span
                             class="tag">食事</span><span class="tag">限定酒</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">山丹正宗 Jazz Brew</span>
-                    <div class="product-desc">オンキヨーとコラボで蔵元の愛するJazzを聴かせた音楽好きにはたまらない逸品。</div>
+                    <span class="product-name">山丹正宗 Jazz Brew 720ml<span class="sold-out-badge">売り切れ</span></span>
+                    <div class="product-desc">オンキヨーとのコラボ酒。蔵元がこよなく愛するJAZZを聞かせて醸したお酒。丸くなった味わいでゆっくりと音楽を聴きながら楽しんで欲しい逸品。
+                    </div>
                     <div class="tags"><span class="tag">食事</span><span class="tag">初心者</span></div>
-                    <a href="#" class="btn-buy" target="_blank">購入する</a>
+                    <a href="#" class="btn-buy sold-out">売り切れ</a>
                 </div>
             </div>
             <button class="btn" onclick="location.reload()" style="margin-top:30px;">もう一度診断する</button>
@@ -376,29 +385,29 @@
             <p>あなたにおすすめの日本酒は...</p>
             <div class="results-row">
                 <div class="result-box">
-                    <span class="product-name">米鶴 スパークリング</span>
-                    <div class="product-desc">シュワシュワの発泡感で乾杯！</div>
+                    <span class="product-name">米鶴 スパークリング 750ml</span>
+                    <div class="product-desc">これが日本酒？！普段飲まない方から幅広く支持される初心者におすすめの1本。パーティー向き。</div>
                     <div class="tags"><span class="tag">食事</span><span class="tag">初心者</span><span
                             class="tag">爽やか</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">城陽 純米吟醸（山田錦）新酒しぼりたて無濾過生原酒</span>
-                    <div class="product-desc">今しか飲めない「新酒・しぼりたて」。</div>
+                    <span class="product-name">城陽 純米吟醸（山田錦）新酒しぼりたて無濾過生原酒 (720ml)</span>
+                    <div class="product-desc">山田錦ならではの芳醇でフルーティな味わいを楽しめる、フレッシュな新酒しぼりたて無濾過生原酒です。</div>
                     <div class="tags"><span class="tag">しぼりたて</span><span class="tag">生酒</span><span
                             class="tag">爽やか</span><span class="tag">香り</span><span class="tag">季節限定</span><span
                             class="tag">初心者</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">松山三井 初しぼり</span>
-                    <div class="product-desc">フレッシュな新酒の味わい。</div>
+                    <span class="product-name">山丹正宗 純米酒 松山三井 初しぼり (720ml)</span>
+                    <div class="product-desc">
+                        愛媛県が誇る酒米「松山三井」と、今治市を流れる蒼社川の名水で丹精込めて仕込んだ、今年最初の力作！新酒の搾りたてをそのまま瓶詰めするので、まさに瑞々しくフレッシュなお酒です。</div>
                     <div class="tags"><span class="tag">しぼりたて</span><span class="tag">生酒</span><span
                             class="tag">爽やか</span><span class="tag">香り</span><span class="tag">季節限定</span><span
                             class="tag">初心者</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
-
             </div>
             <button class="btn" onclick="location.reload()" style="margin-top:30px;">もう一度診断する</button>
         </div>
@@ -407,22 +416,23 @@
             <p>あなたにおすすめの日本酒は...</p>
             <div class="results-row">
                 <div class="result-box">
-                    <span class="product-name">金陵 瀬戸内オリーブ</span>
-                    <div class="product-desc">程よいフルーティさと爽やかなお酒。</div>
+                    <span class="product-name">金陵 瀬戸内オリーブ純米吟醸</span>
+                    <div class="product-desc">瀬戸内ならでは、オリーブ酵母を使った程よいフルーティさと爽やかな味わい。和食にも洋食にも！</div>
                     <div class="tags"><span class="tag">食事</span><span class="tag">香り</span><span
                             class="tag">初心者</span><span class="tag">爽やか</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">六歓 はな</span>
-                    <div class="product-desc">花開くような優しい香りと華やかさ。</div>
+                    <span class="product-name">六歓 はな 特別純米酒</span>
+                    <div class="product-desc">六歓 はなのテーマは「香り」。口に含んだ時に最も香りが高くなるように低温でゆっくりと醸したお酒。あざやかなラベルも人気です。</div>
                     <div class="tags"><span class="tag">食事</span><span class="tag">香り</span><span class="tag">初心者</span>
                     </div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
                 <div class="result-box">
-                    <span class="product-name">わかさ</span>
-                    <div class="product-desc">香り高い純米吟醸。</div>
+                    <span class="product-name">純米吟醸 わかさ 720ml</span>
+                    <div class="product-desc">ルクセンブルク酒チャレンジ2022 純米吟醸部門 プラチナ賞 受賞。和食だけでなくフレンチやイタリアンにも合う爽やかな酸味が特徴のお酒です。
+                    </div>
                     <div class="tags"><span class="tag">受賞酒</span><span class="tag">香り</span></div>
                     <a href="#" class="btn-buy" target="_blank">購入する</a>
                 </div>
@@ -433,22 +443,17 @@
     </div>
 
     <script>
-        // 次の質問を表示する関数
         function next(currentId, nextId) {
             document.getElementById(currentId).classList.remove('active');
-            // フェードインアニメーションのために少し待機
             setTimeout(() => {
                 document.getElementById(nextId).classList.add('active');
             }, 50);
         }
 
-        // 結果を表示する関数
         function showResult(resultId) {
-            // 全ての質問を非表示にする
             const questions = document.querySelectorAll('.question');
             questions.forEach(q => q.classList.remove('active'));
 
-            // 指定された結果IDを表示
             setTimeout(() => {
                 document.getElementById(resultId).classList.add('active');
             }, 50);
